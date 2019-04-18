@@ -11,7 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2637e26c-deb1-48a2-a541-1f172881b9e2",
+						"id": "9ed513a4-cc01-4e1f-9ca2-eb2662d3bf83",
 						"exec": [
 							"////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"////////////////////////////////////////////////////////////////////HECH STATUS 200/////////////////////////////////////////////////////////////////",
@@ -252,17 +252,12 @@
 							"var syncdv = pm.environment.get(\"SYNC_DV\");",
 							"var tps30dv = pm.environment.get(\"TPS30_DV\");",
 							"",
-							"pm.test(\"SYNC_DV cmp2311460\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(syncdv + \"ctx=42674&cmp=2311460&DVP_CMPID=2974496\", \"g\")) || []).length).to.equal(1);",
+							"",
+							"pm.test(\"SYNC.DoubleVerify\", function() {",
+							"   pm.expect((pm.response.text().match(new RegExp(syncdv, \"g\")) || []).length).to.equal(2);",
 							"});",
-							"pm.test(\"SYNC_DV cmp2256325\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(syncdv + \"ctx=42674&cmp=2256325&DVP_CMPID=2974496\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"pm.test(\"SYNC_DV cmp2256325\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(tps30dv + \"ctx=42674&cmp=2256325&sid=1111&plc=22563261\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"pm.test(\"SYNC_DV cmpDV069178\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(tps30dv + \"ctx=42674&cmp=DV069178&sid=1111&plc=2018011501\", \"g\")) || []).length).to.equal(1);",
+							"pm.test(\"TPS30.DoubleVerify\", function() {",
+							"    pm.expect((pm.response.text().match(new RegExp(tps30dv, \"g\")) || []).length).to.equal(2);",
 							"});",
 							"",
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
@@ -270,7 +265,7 @@
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"",
 							"pm.test(\"NielsenOCR\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(s3qaurl + \"nielsenOCRTestPixel.gif\", \"g\")) || []).length).to.equal(1);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"secure-gl.imrworldwide.com/cgi-bin/\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
 							"",
@@ -347,7 +342,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{SERVER_NAME}}/preview?RI=-_4K4O3w7CspJJWcfG3I5w&screenType=desktop&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=bottom-right&usedACP=y&dspACP=TREMORVIDEO_BEHAVIOR&sig=5D956CC916D65D5BDF5794970C68E6EB&CI=wDAimgwijdeORdURJuoLLw&dmps=y&SUI=21906",
+					"raw": "{{SERVER_NAME}}/preview?RI=-_4K4O3w7CspJJWcfG3I5w&screenType=desktop&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=A155FCA224910EB255D27BD0E4352508&CI=QkVpBSG0y-r_S_mC1CaF6Q&dmps=y&SUI=21906",
 					"host": [
 						"{{SERVER_NAME}}"
 					],
@@ -405,23 +400,23 @@
 						},
 						{
 							"key": "position_ACP",
-							"value": "bottom-right"
+							"value": "__adChoicesPosition__"
 						},
 						{
 							"key": "usedACP",
-							"value": "y"
+							"value": "__usedACP__"
 						},
 						{
 							"key": "dspACP",
-							"value": "TREMORVIDEO_BEHAVIOR"
+							"value": "__adChoicesProviders__"
 						},
 						{
 							"key": "sig",
-							"value": "5D956CC916D65D5BDF5794970C68E6EB"
+							"value": "A155FCA224910EB255D27BD0E4352508"
 						},
 						{
 							"key": "CI",
-							"value": "wDAimgwijdeORdURJuoLLw"
+							"value": "QkVpBSG0y-r_S_mC1CaF6Q"
 						},
 						{
 							"key": "dmps",
@@ -511,9 +506,6 @@
 							"    pm.expect((pm.response.text().match(new RegExp(s3qaurl + \"qa.gif\\\\?param1=creative_first_quartile\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
-							"//pm.test(\"Custom Pixel creative screen second quartile\", function() {",
-							"  // pm.expect((pm.response.text().match(new RegExp(s3qaurl + \"qa.gif\\\\?param1=creative_screen_second_quartile\", \"g\")) || []).length).to.equal(1);",
-							"//});",
 							"",
 							"pm.test(\"Custom Pixel creative second quartile\", function() {",
 							"    pm.expect((pm.response.text().match(new RegExp(s3qaurl + \"qa.gif\\\\?param1=creative_second_quartile\", \"g\")) || []).length).to.equal(1);",
@@ -687,25 +679,20 @@
 							"var syncdv = pm.environment.get(\"SYNC_DV\");",
 							"var tps30dv = pm.environment.get(\"TPS30_DV\");",
 							"",
-							"pm.test(\"SYNC_DV cmp2311460\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(syncdv + \"ctx=42674&cmp=2311460&DVP_CMPID=2974496\", \"g\")) || []).length).to.equal(1);",
+							"pm.test(\"SYNC.DoubleVerify\", function() {",
+							"   pm.expect((pm.response.text().match(new RegExp(syncdv, \"g\")) || []).length).to.equal(2);",
 							"});",
-							"pm.test(\"SYNC_DV cmp2256325\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(syncdv + \"ctx=42674&cmp=2256325&DVP_CMPID=2974496\", \"g\")) || []).length).to.equal(1);",
+							"pm.test(\"TPS30.DoubleVerify\", function() {",
+							"    pm.expect((pm.response.text().match(new RegExp(tps30dv, \"g\")) || []).length).to.equal(2);",
 							"});",
-							"pm.test(\"SYNC_DV cmp2256325\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(tps30dv + \"ctx=42674&cmp=2256325&sid=1111&plc=22563261\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"pm.test(\"SYNC_DV cmpDV069178\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(tps30dv + \"ctx=42674&cmp=DV069178&sid=1111&plc=2018011501\", \"g\")) || []).length).to.equal(1);",
-							"});",
+							"",
 							"",
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"/////////////////////////////////////////////////////////////NielsenOCR////////////////////////////////////////////////////////////////////////////////",
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"",
 							"pm.test(\"NielsenOCR\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(s3qaurl + \"nielsenOCRTestPixel.gif\", \"g\")) || []).length).to.equal(1);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"secure-gl.imrworldwide.com/cgi-bin/\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
 							"",
@@ -776,7 +763,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{SERVER_NAME}}/preview?RI=-_4K4O3w7CspJJWcfG3I5w&screenType=mobiletablet&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=bottom-right&usedACP=y&dspACP=TREMORVIDEO_BEHAVIOR&sig=5D956CC916D65D5BDF5794970C68E6EB&CI=wDAimgwijdeORdURJuoLLw&dmps=y&ssRmlApp=1&isApp=y",
+					"raw": "{{SERVER_NAME}}/preview?RI=-_4K4O3w7CspJJWcfG3I5w&screenType=mobiletablet&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=A155FCA224910EB255D27BD0E4352508&CI=QkVpBSG0y-r_S_mC1CaF6Q&dmps=y&ssRmlApp=1&isApp=y",
 					"host": [
 						"{{SERVER_NAME}}"
 					],
@@ -834,23 +821,23 @@
 						},
 						{
 							"key": "position_ACP",
-							"value": "bottom-right"
+							"value": "__adChoicesPosition__"
 						},
 						{
 							"key": "usedACP",
-							"value": "y"
+							"value": "__usedACP__"
 						},
 						{
 							"key": "dspACP",
-							"value": "TREMORVIDEO_BEHAVIOR"
+							"value": "__adChoicesProviders__"
 						},
 						{
 							"key": "sig",
-							"value": "5D956CC916D65D5BDF5794970C68E6EB"
+							"value": "A155FCA224910EB255D27BD0E4352508"
 						},
 						{
 							"key": "CI",
-							"value": "wDAimgwijdeORdURJuoLLw"
+							"value": "QkVpBSG0y-r_S_mC1CaF6Q"
 						},
 						{
 							"key": "dmps",
@@ -1109,17 +1096,11 @@
 							"var syncdv = pm.environment.get(\"SYNC_DV\");",
 							"var tps30dv = pm.environment.get(\"TPS30_DV\");",
 							"",
-							"pm.test(\"SYNC_DV cmp2311460\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(syncdv + \"ctx=42674&cmp=2311460&DVP_CMPID=2974486\", \"g\")) || []).length).to.equal(1);",
+							"pm.test(\"SYNC.DoubleVerify\", function() {",
+							"   pm.expect((pm.response.text().match(new RegExp(syncdv, \"g\")) || []).length).to.equal(2);",
 							"});",
-							"pm.test(\"SYNC_DV cmp2256325\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(syncdv + \"ctx=42674&cmp=2256325&DVP_CMPID=2974486\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"pm.test(\"SYNC_DV cmp2256325\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(tps30dv + \"ctx=42674&cmp=2256325&sid=1111&plc=22563261\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"pm.test(\"SYNC_DV cmpDV069178\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(tps30dv + \"ctx=42674&cmp=DV069178&sid=1111&plc=2018011501\", \"g\")) || []).length).to.equal(1);",
+							"pm.test(\"TPS30.DoubleVerify\", function() {",
+							"    pm.expect((pm.response.text().match(new RegExp(tps30dv, \"g\")) || []).length).to.equal(2);",
 							"});",
 							"",
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
@@ -1127,7 +1108,7 @@
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"",
 							"pm.test(\"NielsenOCR\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(s3qaurl + \"nielsenOCRTestPixel.gif\", \"g\")) || []).length).to.equal(1);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"secure-gl.imrworldwide.com/cgi-bin/\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
 							"",
@@ -1137,7 +1118,7 @@
 							"",
 							"",
 							"pm.test(\"MOAT\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"MOAT_IAB\")) || []).length).to.equal(1);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"MOAT_GROUP_M\")) || []).length).to.equal(1);",
 							"});",
 							"",
 							"pm.test(\"MOAT level1\", function() {",
@@ -1228,7 +1209,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{SERVER_NAME}}/preview?RI=0qVDB4RQ6XxaPtPJ6LvNPw&screenType=desktop&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=771448CB749060E16B6A0A439C6184C6&CI=fkme_rzqTp5y7f9N3hiK2w&dmps=y&SUI=21906",
+					"raw": "{{SERVER_NAME}}/preview?RI=0qVDB4RQ6XxaPtPJ6LvNPw&screenType=desktop&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=EB3C0E79452040BDF67C3F14F44A81FE&CI=EQRLslwxeX0ah-b4ofuB8A&dmps=y&SUI=21906",
 					"host": [
 						"{{SERVER_NAME}}"
 					],
@@ -1298,11 +1279,11 @@
 						},
 						{
 							"key": "sig",
-							"value": "771448CB749060E16B6A0A439C6184C6"
+							"value": "EB3C0E79452040BDF67C3F14F44A81FE"
 						},
 						{
 							"key": "CI",
-							"value": "fkme_rzqTp5y7f9N3hiK2w"
+							"value": "EQRLslwxeX0ah-b4ofuB8A"
 						},
 						{
 							"key": "dmps",
@@ -1553,17 +1534,11 @@
 							"var syncdv = pm.environment.get(\"SYNC_DV\");",
 							"var tps30dv = pm.environment.get(\"TPS30_DV\");",
 							"",
-							"pm.test(\"SYNC_DV cmp2311460\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(syncdv + \"ctx=42674&cmp=2311460&DVP_CMPID=2974486\", \"g\")) || []).length).to.equal(1);",
+							"pm.test(\"SYNC.DoubleVerify\", function() {",
+							"   pm.expect((pm.response.text().match(new RegExp(syncdv, \"g\")) || []).length).to.equal(2);",
 							"});",
-							"pm.test(\"SYNC_DV cmp2256325\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(syncdv + \"ctx=42674&cmp=2256325&DVP_CMPID=2974486\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"pm.test(\"SYNC_DV cmp2256325\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(tps30dv + \"ctx=42674&cmp=2256325&sid=1111&plc=22563261\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"pm.test(\"SYNC_DV cmpDV069178\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(tps30dv + \"ctx=42674&cmp=DV069178&sid=1111&plc=2018011501\", \"g\")) || []).length).to.equal(1);",
+							"pm.test(\"TPS30.DoubleVerify\", function() {",
+							"    pm.expect((pm.response.text().match(new RegExp(tps30dv, \"g\")) || []).length).to.equal(2);",
 							"});",
 							"",
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
@@ -1571,7 +1546,7 @@
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"",
 							"pm.test(\"NielsenOCR\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(s3qaurl + \"nielsenOCRTestPixel.gif\", \"g\")) || []).length).to.equal(1);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"secure-gl.imrworldwide.com/cgi-bin/\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
 							"",
@@ -1581,8 +1556,13 @@
 							"",
 							"",
 							"pm.test(\"MOAT\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"px.moatads.com\")) || []).length).to.equal(1);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"px.moatads.com/pixel.gif\")) || []).length).to.equal(1);",
 							"});",
+							"",
+							"pm.test(\"MOAT Mobile\", function() {",
+							"    pm.expect((pm.response.text().match(new RegExp(\"zMoatTremorAdvertise\")) || []).length).to.equal(1);",
+							"});",
+							"",
 							"",
 							"",
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
@@ -1648,7 +1628,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{SERVER_NAME}}/preview?RI=0qVDB4RQ6XxaPtPJ6LvNPw&screenType=mobiletablet&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=771448CB749060E16B6A0A439C6184C6&CI=fkme_rzqTp5y7f9N3hiK2w&dmps=y&ssRmlApp=1&isApp=y",
+					"raw": "{{SERVER_NAME}}/preview?RI=0qVDB4RQ6XxaPtPJ6LvNPw&screenType=mobiletablet&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=EB3C0E79452040BDF67C3F14F44A81FE&CI=EQRLslwxeX0ah-b4ofuB8A&dmps=y&ssRmlApp=1&isApp=y",
 					"host": [
 						"{{SERVER_NAME}}"
 					],
@@ -1718,11 +1698,11 @@
 						},
 						{
 							"key": "sig",
-							"value": "771448CB749060E16B6A0A439C6184C6"
+							"value": "EB3C0E79452040BDF67C3F14F44A81FE"
 						},
 						{
 							"key": "CI",
-							"value": "fkme_rzqTp5y7f9N3hiK2w"
+							"value": "EQRLslwxeX0ah-b4ofuB8A"
 						},
 						{
 							"key": "dmps",
@@ -1936,17 +1916,11 @@
 							"var syncdv = pm.environment.get(\"SYNC_DV\");",
 							"var tps30dv = pm.environment.get(\"TPS30_DV\");",
 							"",
-							"pm.test(\"SYNC_DV cmp=2311460\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(syncdv + \"ctx=42674&cmp=2311460&DVP_CMPID=2976196\", \"g\")) || []).length).to.equal(1);",
+							"pm.test(\"SYNC.DoubleVerify\", function() {",
+							"   pm.expect((pm.response.text().match(new RegExp(syncdv, \"g\")) || []).length).to.equal(2);",
 							"});",
-							"pm.test(\"SYNC_DV cmp2256325\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(syncdv + \"ctx=42674&cmp=2256325&DVP_CMPID=2976196\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"pm.test(\"SYNC_DV cmp2256325\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(tps30dv + \"ctx=42674&cmp=2256325&sid=1111&plc=22563261\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"pm.test(\"SYNC_DV cmpDV069178\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(tps30dv + \"ctx=42674&cmp=DV069178&sid=1111&plc=2018011501\", \"g\")) || []).length).to.equal(1);",
+							"pm.test(\"TPS30.DoubleVerify\", function() {",
+							"    pm.expect((pm.response.text().match(new RegExp(tps30dv, \"g\")) || []).length).to.equal(2);",
 							"});",
 							"",
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
@@ -1954,7 +1928,7 @@
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"",
 							"pm.test(\"NielsenOCR\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(s3qaurl + \"nielsenOCRTestPixel.gif\", \"g\")) || []).length).to.equal(1);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"secure-gl.imrworldwide.com/cgi-bin/\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
 							"",
@@ -2034,7 +2008,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{SERVER_NAME}}/preview?RI=IkYgDLIOrjWTY3uLCOQXaw&screenType=desktop&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=bottom-right&usedACP=y&dspACP=TREMORVIDEO_BEHAVIOR&sig=948D75FE35D0DF22CE0EE11E220FEE6D&CI=sYVpCYTW0M39akBWm0F0Ow&dmps=y&SUI=21906",
+					"raw": "{{SERVER_NAME}}/preview?RI=IkYgDLIOrjWTY3uLCOQXaw&screenType=desktop&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=A1EACCBDAC58AFA6141FDB4341608FB5&CI=tRLrZ3DRVg73eA19b3cA7A&dmps=y&SUI=21906",
 					"host": [
 						"{{SERVER_NAME}}"
 					],
@@ -2092,23 +2066,23 @@
 						},
 						{
 							"key": "position_ACP",
-							"value": "bottom-right"
+							"value": "__adChoicesPosition__"
 						},
 						{
 							"key": "usedACP",
-							"value": "y"
+							"value": "__usedACP__"
 						},
 						{
 							"key": "dspACP",
-							"value": "TREMORVIDEO_BEHAVIOR"
+							"value": "__adChoicesProviders__"
 						},
 						{
 							"key": "sig",
-							"value": "948D75FE35D0DF22CE0EE11E220FEE6D"
+							"value": "A1EACCBDAC58AFA6141FDB4341608FB5"
 						},
 						{
 							"key": "CI",
-							"value": "sYVpCYTW0M39akBWm0F0Ow"
+							"value": "tRLrZ3DRVg73eA19b3cA7A"
 						},
 						{
 							"key": "dmps",
@@ -2330,9 +2304,6 @@
 							"    pm.expect((pm.response.text().match(new RegExp(l0pixel + \"EC=38&\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
-							"pm.test(\"LO Pixel ec15\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(l0pixel + \"EC=15&\", \"g\")) || []).length).to.equal(1);",
-							"});",
 							"",
 							"pm.test(\"LO Pixel ec4\", function() {",
 							"    pm.expect((pm.response.text().match(new RegExp(l0pixel + \"EC=4&\", \"g\")) || []).length).to.equal(1);",
@@ -2357,17 +2328,11 @@
 							"var syncdv = pm.environment.get(\"SYNC_DV\");",
 							"var tps30dv = pm.environment.get(\"TPS30_DV\");",
 							"",
-							"pm.test(\"SYNC_DV cmp=2311460\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(syncdv + \"ctx=42674&cmp=2311460&DVP_CMPID=2976196\", \"g\")) || []).length).to.equal(1);",
+							"pm.test(\"SYNC.DoubleVerify\", function() {",
+							"   pm.expect((pm.response.text().match(new RegExp(syncdv, \"g\")) || []).length).to.equal(2);",
 							"});",
-							"pm.test(\"SYNC_DV cmp2256325\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(syncdv + \"ctx=42674&cmp=2256325&DVP_CMPID=2976196\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"pm.test(\"SYNC_DV cmp2256325\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(tps30dv + \"ctx=42674&cmp=2256325&sid=1111&plc=22563261\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"pm.test(\"SYNC_DV cmpDV069178\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(tps30dv + \"ctx=42674&cmp=DV069178&sid=1111&plc=2018011501\", \"g\")) || []).length).to.equal(1);",
+							"pm.test(\"TPS30.DoubleVerify\", function() {",
+							"    pm.expect((pm.response.text().match(new RegExp(tps30dv, \"g\")) || []).length).to.equal(2);",
 							"});",
 							"",
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
@@ -2375,7 +2340,7 @@
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"",
 							"pm.test(\"NielsenOCR\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(s3qaurl + \"nielsenOCRTestPixel.gif\", \"g\")) || []).length).to.equal(1);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"secure-gl.imrworldwide.com/cgi-bin/\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
 							"",
@@ -2391,7 +2356,7 @@
 							"var objectNet = pm.environment.get(\"OBJECT_NET\");",
 							"",
 							"pm.test(\"RML\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(objectNet + \"net/js/rml.min.js\")) || []).length).to.equal(1);",
+							"    pm.expect((pm.response.text().match(new RegExp(objectNet + \"net/js/rml-app.min.js\")) || []).length).to.equal(1);",
 							"});",
 							"",
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
@@ -2407,12 +2372,6 @@
 							"});",
 							"pm.test(\"topprop\", function() {",
 							"    pm.expect((pm.response.text().match(new RegExp(\"https://tp.videohub.tv/v1/topprop.png\")) || []).length).to.equal(1);",
-							"});",
-							"pm.test(\"VizuSurvey\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"https://secure-gl.imrworldwide.com/u/ad\")) || []).length).to.equal(1);",
-							"});",
-							"pm.test(\"VizuSurveyTag\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"https://secure-gl.imrworldwide.com/u/t/00/01/23/45/video_tag.js\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
 							"pm.test(\"eipct0\", function() {",
@@ -2455,7 +2414,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{SERVER_NAME}}/preview?RI=IkYgDLIOrjWTY3uLCOQXaw&screenType=desktop&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=bottom-right&usedACP=y&dspACP=TREMORVIDEO_BEHAVIOR&sig=948D75FE35D0DF22CE0EE11E220FEE6D&CI=sYVpCYTW0M39akBWm0F0Ow&dmps=y&SUI=21906",
+					"raw": "{{SERVER_NAME}}/preview?RI=IkYgDLIOrjWTY3uLCOQXaw&screenType=mobiletablet&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=A1EACCBDAC58AFA6141FDB4341608FB5&CI=tRLrZ3DRVg73eA19b3cA7A&dmps=y&ssRmlApp=1&isApp=y",
 					"host": [
 						"{{SERVER_NAME}}"
 					],
@@ -2469,7 +2428,7 @@
 						},
 						{
 							"key": "screenType",
-							"value": "desktop"
+							"value": "mobiletablet"
 						},
 						{
 							"key": "rml",
@@ -2513,31 +2472,35 @@
 						},
 						{
 							"key": "position_ACP",
-							"value": "bottom-right"
+							"value": "__adChoicesPosition__"
 						},
 						{
 							"key": "usedACP",
-							"value": "y"
+							"value": "__usedACP__"
 						},
 						{
 							"key": "dspACP",
-							"value": "TREMORVIDEO_BEHAVIOR"
+							"value": "__adChoicesProviders__"
 						},
 						{
 							"key": "sig",
-							"value": "948D75FE35D0DF22CE0EE11E220FEE6D"
+							"value": "A1EACCBDAC58AFA6141FDB4341608FB5"
 						},
 						{
 							"key": "CI",
-							"value": "sYVpCYTW0M39akBWm0F0Ow"
+							"value": "tRLrZ3DRVg73eA19b3cA7A"
 						},
 						{
 							"key": "dmps",
 							"value": "y"
 						},
 						{
-							"key": "SUI",
-							"value": "21906"
+							"key": "ssRmlApp",
+							"value": "1"
+						},
+						{
+							"key": "isApp",
+							"value": "y"
 						}
 					]
 				}
@@ -2775,17 +2738,11 @@
 							"var syncdv = pm.environment.get(\"SYNC_DV\");",
 							"var tps30dv = pm.environment.get(\"TPS30_DV\");",
 							"",
-							"pm.test(\"SYNC_DV cmp2311460\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(syncdv + \"ctx=42674&cmp=2311460&DVP_CMPID=2976256\", \"g\")) || []).length).to.equal(1);",
+							"pm.test(\"SYNC.DoubleVerify\", function() {",
+							"   pm.expect((pm.response.text().match(new RegExp(syncdv, \"g\")) || []).length).to.equal(2);",
 							"});",
-							"pm.test(\"SYNC_DV cmp2256325\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(syncdv + \"ctx=42674&cmp=2256325&DVP_CMPID=2976256\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"pm.test(\"SYNC_DV cmp2256325\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(tps30dv + \"ctx=42674&cmp=2256325&sid=1111&plc=22563261\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"pm.test(\"SYNC_DV cmpDV069178\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(tps30dv + \"ctx=42674&cmp=DV069178&sid=1111&plc=2018011501\", \"g\")) || []).length).to.equal(1);",
+							"pm.test(\"TPS30.DoubleVerify\", function() {",
+							"    pm.expect((pm.response.text().match(new RegExp(tps30dv, \"g\")) || []).length).to.equal(2);",
 							"});",
 							"",
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
@@ -2793,7 +2750,7 @@
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"",
 							"pm.test(\"NielsenOCR\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(s3qaurl + \"nielsenOCRTestPixel.gif\", \"g\")) || []).length).to.equal(1);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"secure-gl.imrworldwide.com/cgi-bin/\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
 							"",
@@ -2965,7 +2922,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{SERVER_NAME}}/preview?RI=NrKrDCYCiKsZlfsu0NDVcA&screenType=desktop&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=bottom-right&usedACP=y&dspACP=TREMORVIDEO_BEHAVIOR&sig=723D58EBCF911DE2FD447877C8FEF69C&CI=pG2I3WKASvXcjb0oEXb1iA&dmps=y&SUI=21906",
+					"raw": "{{SERVER_NAME}}/preview?RI=NrKrDCYCiKsZlfsu0NDVcA&screenType=desktop&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=8374B2F71F352F8424BC07AE2010C2CE&CI=8D6gbhJV9xRKc-srNb9q4A&dmps=y&SUI=21906",
 					"host": [
 						"{{SERVER_NAME}}"
 					],
@@ -3023,23 +2980,23 @@
 						},
 						{
 							"key": "position_ACP",
-							"value": "bottom-right"
+							"value": "__adChoicesPosition__"
 						},
 						{
 							"key": "usedACP",
-							"value": "y"
+							"value": "__usedACP__"
 						},
 						{
 							"key": "dspACP",
-							"value": "TREMORVIDEO_BEHAVIOR"
+							"value": "__adChoicesProviders__"
 						},
 						{
 							"key": "sig",
-							"value": "723D58EBCF911DE2FD447877C8FEF69C"
+							"value": "8374B2F71F352F8424BC07AE2010C2CE"
 						},
 						{
 							"key": "CI",
-							"value": "pG2I3WKASvXcjb0oEXb1iA"
+							"value": "8D6gbhJV9xRKc-srNb9q4A"
 						},
 						{
 							"key": "dmps",
@@ -5964,17 +5921,11 @@
 							"var syncdv = pm.environment.get(\"SYNC_DV\");\r",
 							"var tps30dv = pm.environment.get(\"TPS30_DV\");\r",
 							"\r",
-							"pm.test(\"SYNC_DV cmp2311460\", function() {\r",
-							"    pm.expect((pm.response.text().match(new RegExp(syncdv + \"ctx=42674&cmp=2311460&DVP_CMPID=2974496\", \"g\")) || []).length).to.equal(1);\r",
+							"pm.test(\"SYNC.DoubleVerify\", function() {\r",
+							"   pm.expect((pm.response.text().match(new RegExp(syncdv, \"g\")) || []).length).to.equal(2);\r",
 							"});\r",
-							"pm.test(\"SYNC_DV cmp2256325\", function() {\r",
-							"    pm.expect((pm.response.text().match(new RegExp(syncdv + \"ctx=42674&cmp=2256325&DVP_CMPID=2974496\", \"g\")) || []).length).to.equal(1);\r",
-							"});\r",
-							"pm.test(\"SYNC_DV cmp2256325\", function() {\r",
-							"    pm.expect((pm.response.text().match(new RegExp(tps30dv + \"ctx=42674&cmp=2256325&sid=1111&plc=22563261\", \"g\")) || []).length).to.equal(1);\r",
-							"});\r",
-							"pm.test(\"SYNC_DV cmpDV069178\", function() {\r",
-							"    pm.expect((pm.response.text().match(new RegExp(tps30dv + \"ctx=42674&cmp=DV069178&sid=1111&plc=2018011501\", \"g\")) || []).length).to.equal(1);\r",
+							"pm.test(\"TPS30.DoubleVerify\", function() {\r",
+							"    pm.expect((pm.response.text().match(new RegExp(tps30dv, \"g\")) || []).length).to.equal(2);\r",
 							"});\r",
 							"\r",
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\r",
@@ -5982,7 +5933,7 @@
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\r",
 							"\r",
 							"pm.test(\"NielsenOCR\", function() {\r",
-							"    pm.expect((pm.response.text().match(new RegExp(s3qaurl + \"nielsenOCRTestPixel.gif\", \"g\")) || []).length).to.equal(1);\r",
+							"    pm.expect((pm.response.text().match(new RegExp(\"secure-gl.imrworldwide.com/cgi-bin/\", \"g\")) || []).length).to.equal(1);\r",
 							"});\r",
 							"\r",
 							"\r",
@@ -6041,14 +5992,15 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://adserver.iad1.videohub.tv/preview?RI=-_4K4O3w7CspJJWcfG3I5w&ssDsC=ctv&screenType=ctv&rml=false&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=bottom-right&usedACP=y&dspACP=TREMORVIDEO_BEHAVIOR&sig=5D956CC916D65D5BDF5794970C68E6EB&CI=wDAimgwijdeORdURJuoLLw&dmps=y",
-					"protocol": "https",
+					"raw": "http://10.90.32.221:8080/preview?RI=-_4K4O3w7CspJJWcfG3I5w&screenType=ctv&rml=false&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=A155FCA224910EB255D27BD0E4352508&CI=QkVpBSG0y-r_S_mC1CaF6Q&dmps=y&ssDsC=ctv",
+					"protocol": "http",
 					"host": [
-						"adserver",
-						"iad1",
-						"videohub",
-						"tv"
+						"10",
+						"90",
+						"32",
+						"221"
 					],
+					"port": "8080",
 					"path": [
 						"preview"
 					],
@@ -6056,10 +6008,6 @@
 						{
 							"key": "RI",
 							"value": "-_4K4O3w7CspJJWcfG3I5w"
-						},
-						{
-							"key": "ssDsC",
-							"value": "ctv"
 						},
 						{
 							"key": "screenType",
@@ -6107,27 +6055,31 @@
 						},
 						{
 							"key": "position_ACP",
-							"value": "bottom-right"
+							"value": "__adChoicesPosition__"
 						},
 						{
 							"key": "usedACP",
-							"value": "y"
+							"value": "__usedACP__"
 						},
 						{
 							"key": "dspACP",
-							"value": "TREMORVIDEO_BEHAVIOR"
+							"value": "__adChoicesProviders__"
 						},
 						{
 							"key": "sig",
-							"value": "5D956CC916D65D5BDF5794970C68E6EB"
+							"value": "A155FCA224910EB255D27BD0E4352508"
 						},
 						{
 							"key": "CI",
-							"value": "wDAimgwijdeORdURJuoLLw"
+							"value": "QkVpBSG0y-r_S_mC1CaF6Q"
 						},
 						{
 							"key": "dmps",
 							"value": "y"
+						},
+						{
+							"key": "ssDsC",
+							"value": "ctv"
 						}
 					]
 				}
