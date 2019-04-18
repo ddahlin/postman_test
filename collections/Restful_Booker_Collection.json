@@ -5992,15 +5992,13 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://10.90.32.221:8080/preview?RI=-_4K4O3w7CspJJWcfG3I5w&screenType=ctv&rml=false&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=A155FCA224910EB255D27BD0E4352508&CI=QkVpBSG0y-r_S_mC1CaF6Q&dmps=y&ssDsC=ctv",
-					"protocol": "http",
+					"raw": "https://adserver.videohub.tv/preview?RI=-_4K4O3w7CspJJWcfG3I5w&screenType=ctv&rml=false&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=A155FCA224910EB255D27BD0E4352508&CI=QkVpBSG0y-r_S_mC1CaF6Q&dmps=y&ssDsC=ctv",
+					"protocol": "https",
 					"host": [
-						"10",
-						"90",
-						"32",
-						"221"
+						"adserver",
+						"videohub",
+						"tv"
 					],
-					"port": "8080",
 					"path": [
 						"preview"
 					],
@@ -6331,7 +6329,7 @@
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"",
 							"pm.test(\"NielsenOCR\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(s3qaurl + \"nielsenOCRTestPixel.gif\", \"g\")) || []).length).to.equal(1);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"secure-gl.imrworldwide.com/cgi-bin/\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
 							"",
