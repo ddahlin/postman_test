@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "b8c6624b-7529-47c9-902a-feff4071ca8a",
+		"_postman_id": "08628115-4a12-488f-af0e-7239b64a7fb6",
 		"name": "AD_SERVER_QA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -169,9 +169,6 @@
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"dd\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
-							"pm.test(\"USYNC Pixel lrjs\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(usync + \"lrjs\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
-							"});",
 							"",
 							"pm.test(\"USYNC Pixel db\", function() {",
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"db\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
@@ -197,7 +194,7 @@
 							"})",
 							"",
 							"pm.test(\"USYNC Count = 20\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(20);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(19);",
 							"});",
 							"",
 							"////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
@@ -265,7 +262,7 @@
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"",
 							"pm.test(\"NielsenOCR\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"secure-gl.imrworldwide.com/cgi-bin/\", \"g\")) || []).length).to.equal(1);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"nielsenOCRTestPixel.gif\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
 							"",
@@ -337,12 +334,8 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "{{SERVER_NAME}}/preview?RI=-_4K4O3w7CspJJWcfG3I5w&screenType=desktop&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=A155FCA224910EB255D27BD0E4352508&CI=QkVpBSG0y-r_S_mC1CaF6Q&dmps=y&SUI=21906",
+					"raw": "{{SERVER_NAME}}/preview?RI=0eD0x-MBUWxGi9L3SWt8Bw&screenType=desktop&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=8C6DAF108BE9ECF2A928CD0CCAA461CC&CI=wDAimgwijdeORdURJuoLLw&filterScreenTypes=desktop,mobilephone,mobiletablet,ctv&advertiserName=QA_DO_NOT_ALTER&dmps=y&SUI=21906",
 					"host": [
 						"{{SERVER_NAME}}"
 					],
@@ -352,7 +345,7 @@
 					"query": [
 						{
 							"key": "RI",
-							"value": "-_4K4O3w7CspJJWcfG3I5w"
+							"value": "0eD0x-MBUWxGi9L3SWt8Bw"
 						},
 						{
 							"key": "screenType",
@@ -412,11 +405,19 @@
 						},
 						{
 							"key": "sig",
-							"value": "A155FCA224910EB255D27BD0E4352508"
+							"value": "8C6DAF108BE9ECF2A928CD0CCAA461CC"
 						},
 						{
 							"key": "CI",
-							"value": "QkVpBSG0y-r_S_mC1CaF6Q"
+							"value": "wDAimgwijdeORdURJuoLLw"
+						},
+						{
+							"key": "filterScreenTypes",
+							"value": "desktop,mobilephone,mobiletablet,ctv"
+						},
+						{
+							"key": "advertiserName",
+							"value": "QA_DO_NOT_ALTER"
 						},
 						{
 							"key": "dmps",
@@ -593,9 +594,6 @@
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"dd\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
-							"pm.test(\"USYNC Pixel lrjs\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(usync + \"lrjs\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
-							"});",
 							"",
 							"pm.test(\"USYNC Pixel db\", function() {",
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"db\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
@@ -621,7 +619,7 @@
 							"})",
 							"",
 							"pm.test(\"USYNC Count = 20\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(20);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(19);",
 							"});",
 							"////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"/////////////////////////////////////////////////////////////////////L0-SECURE.VIDEOHUB/////////////////////////////////////////////////////////",
@@ -692,7 +690,7 @@
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"",
 							"pm.test(\"NielsenOCR\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"secure-gl.imrworldwide.com/cgi-bin/\", \"g\")) || []).length).to.equal(1);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"s.tremorvideodsp.com/q/nielsenOCRTestPixel.gif\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
 							"",
@@ -758,12 +756,8 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "{{SERVER_NAME}}/preview?RI=-_4K4O3w7CspJJWcfG3I5w&screenType=mobiletablet&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=A155FCA224910EB255D27BD0E4352508&CI=QkVpBSG0y-r_S_mC1CaF6Q&dmps=y&ssRmlApp=1&isApp=y",
+					"raw": "{{SERVER_NAME}}/preview?RI=0eD0x-MBUWxGi9L3SWt8Bw&screenType=mobiletablet&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=8C6DAF108BE9ECF2A928CD0CCAA461CC&CI=wDAimgwijdeORdURJuoLLw&filterScreenTypes=desktop,mobilephone,mobiletablet,ctv&advertiserName=QA_DO_NOT_ALTER&dmps=y&ssRmlApp=1&isApp=y",
 					"host": [
 						"{{SERVER_NAME}}"
 					],
@@ -773,7 +767,7 @@
 					"query": [
 						{
 							"key": "RI",
-							"value": "-_4K4O3w7CspJJWcfG3I5w"
+							"value": "0eD0x-MBUWxGi9L3SWt8Bw"
 						},
 						{
 							"key": "screenType",
@@ -833,11 +827,19 @@
 						},
 						{
 							"key": "sig",
-							"value": "A155FCA224910EB255D27BD0E4352508"
+							"value": "8C6DAF108BE9ECF2A928CD0CCAA461CC"
 						},
 						{
 							"key": "CI",
-							"value": "QkVpBSG0y-r_S_mC1CaF6Q"
+							"value": "wDAimgwijdeORdURJuoLLw"
+						},
+						{
+							"key": "filterScreenTypes",
+							"value": "desktop,mobilephone,mobiletablet,ctv"
+						},
+						{
+							"key": "advertiserName",
+							"value": "QA_DO_NOT_ALTER"
 						},
 						{
 							"key": "dmps",
@@ -1014,10 +1016,6 @@
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"dd\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
-							"pm.test(\"USYNC Pixel lrjs\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(usync + \"lrjs\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"",
 							"pm.test(\"USYNC Pixel db\", function() {",
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"db\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
@@ -1042,7 +1040,7 @@
 							"})",
 							"",
 							"pm.test(\"USYNC Count = 20\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(20);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(19);",
 							"});",
 							"////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"/////////////////////////////////////////////////////////////////////L0-SECURE.VIDEOHUB/////////////////////////////////////////////////////////",
@@ -1204,10 +1202,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "{{SERVER_NAME}}/preview?RI=0qVDB4RQ6XxaPtPJ6LvNPw&screenType=desktop&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=EB3C0E79452040BDF67C3F14F44A81FE&CI=EQRLslwxeX0ah-b4ofuB8A&dmps=y&SUI=21906",
 					"host": [
@@ -1456,9 +1450,6 @@
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"dd\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
-							"pm.test(\"USYNC Pixel lrjs\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(usync + \"lrjs\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
-							"});",
 							"",
 							"pm.test(\"USYNC Pixel db\", function() {",
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"db\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
@@ -1484,7 +1475,7 @@
 							"})",
 							"",
 							"pm.test(\"USYNC Count = 20\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(20);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(19);",
 							"});",
 							"////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"/////////////////////////////////////////////////////////////////////L0-SECURE.VIDEOHUB/////////////////////////////////////////////////////////",
@@ -1623,10 +1614,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "{{SERVER_NAME}}/preview?RI=0qVDB4RQ6XxaPtPJ6LvNPw&screenType=mobiletablet&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=EB3C0E79452040BDF67C3F14F44A81FE&CI=EQRLslwxeX0ah-b4ofuB8A&dmps=y&ssRmlApp=1&isApp=y",
 					"host": [
@@ -1872,9 +1859,6 @@
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"dd\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
-							"pm.test(\"USYNC Pixel lrjs\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(usync + \"lrjs\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
-							"});",
 							"",
 							"pm.test(\"USYNC Pixel db\", function() {",
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"db\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
@@ -1900,7 +1884,7 @@
 							"})",
 							"",
 							"pm.test(\"USYNC Count = 20\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(20);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(19);",
 							"});",
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"//////////////////////////////////////////////////////////////CLICK THROUGH////////////////////////////////////////////////////////////////////////////",
@@ -2003,10 +1987,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "{{SERVER_NAME}}/preview?RI=IkYgDLIOrjWTY3uLCOQXaw&screenType=desktop&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=A1EACCBDAC58AFA6141FDB4341608FB5&CI=tRLrZ3DRVg73eA19b3cA7A&dmps=y&SUI=21906",
 					"host": [
@@ -2248,10 +2228,6 @@
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"dd\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
-							"pm.test(\"USYNC Pixel lrjs\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(usync + \"lrjs\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"",
 							"pm.test(\"USYNC Pixel db\", function() {",
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"db\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
@@ -2276,7 +2252,7 @@
 							"})",
 							"",
 							"pm.test(\"USYNC Count = 20\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(20);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(19);",
 							"});",
 							"////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"/////////////////////////////////////////////////////////////////////L0-SECURE.VIDEOHUB/////////////////////////////////////////////////////////",
@@ -2409,10 +2385,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "{{SERVER_NAME}}/preview?RI=IkYgDLIOrjWTY3uLCOQXaw&screenType=mobiletablet&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=A1EACCBDAC58AFA6141FDB4341608FB5&CI=tRLrZ3DRVg73eA19b3cA7A&dmps=y&ssRmlApp=1&isApp=y",
 					"host": [
@@ -2656,10 +2628,6 @@
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"dd\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
-							"pm.test(\"USYNC Pixel lrjs\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(usync + \"lrjs\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"",
 							"pm.test(\"USYNC Pixel db\", function() {",
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"db\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
@@ -2684,7 +2652,7 @@
 							"})",
 							"",
 							"pm.test(\"USYNC Count = 20\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(20);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(19);",
 							"});",
 							"////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"/////////////////////////////////////////////////////////////////////L0-SECURE.VIDEOHUB/////////////////////////////////////////////////////////",
@@ -2917,10 +2885,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "{{SERVER_NAME}}/preview?RI=NrKrDCYCiKsZlfsu0NDVcA&screenType=desktop&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=8374B2F71F352F8424BC07AE2010C2CE&CI=8D6gbhJV9xRKc-srNb9q4A&dmps=y&SUI=21906",
 					"host": [
@@ -3155,10 +3119,6 @@
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"dd\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
-							"pm.test(\"USYNC Pixel lrjs\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(usync + \"lrjs\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"",
 							"pm.test(\"USYNC Pixel db\", function() {",
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"db\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
@@ -3183,7 +3143,7 @@
 							"})",
 							"",
 							"pm.test(\"USYNC Count = 20\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(20);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(19);",
 							"});",
 							"////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"/////////////////////////////////////////////////////////////////////L0-SECURE.VIDEOHUB/////////////////////////////////////////////////////////",
@@ -3342,10 +3302,6 @@
 						"type": "text"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://ads.videohub.tv/vast2.0?vpaid=N&vpaidType=full&wrapper=true&partnerId=465004&campaignId=3453576&videoPageUrl=%5Bpage.url%5D&ssSL=%5Bpage.url%5D&videoId=%5Bvideo.id%5D&videoTitle=%5Bvideo.title%5D&videoDesc=%5Bvideo.description%5D&videoUrl=%5Bvideo.url%5D&random=%5Btimestamp%5D&ssADcC=iframe,html,static",
 					"protocol": "https",
@@ -3571,10 +3527,6 @@
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"dd\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
-							"pm.test(\"USYNC Pixel lrjs\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(usync + \"lrjs\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"",
 							"pm.test(\"USYNC Pixel db\", function() {",
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"db\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
@@ -3599,7 +3551,7 @@
 							"})",
 							"",
 							"pm.test(\"USYNC Count = 20\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(20);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(19);",
 							"});",
 							"////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"/////////////////////////////////////////////////////////////////////L0-SECURE.VIDEOHUB/////////////////////////////////////////////////////////",
@@ -3838,10 +3790,6 @@
 						"type": "text"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://ads.videohub.tv/vast2.0?ssOI=1803&vpaid=Y&vpaidType=full&partnerId=465004&campaignId=3453546&videoId=%5Bvideo.id%5D&videoTitle=%5Bvideo.title%5D&videoDesc=%5Bvideo.description%5D&videoPageUrl=%5Bpage.url%5D&videoUrl=%5Bvideo.url%5D&random=%5Btimestamp%5D&rml=y&vpaidHtml5=Y",
 					"protocol": "https",
@@ -4191,10 +4139,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://ads-secure.videohub.tv/vast2.0?ssOI=1803&vpaid=Y&vpaidType=full&partnerId=890806&campaignId=3349006&useSecure=true&random=%5btimestamp%5d&rml=y&vpaidHtml5=Y",
 					"protocol": "https",
@@ -4530,10 +4474,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://ads-secure.videohub.tv/vast2.0?ssOI=1803&vpaid=Y&vpaidType=full&partnerId=890836&campaignId=3349136&useSecure=true&random=%5btimestamp%5d&rml=y&vpaidHtml5=Y",
 					"protocol": "https",
@@ -4863,10 +4803,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://ads-secure.videohub.tv/vast2.0?ssOI=1803&vpaid=Y&vpaidType=full&partnerId=895306&campaignId=3352006&useSecure=true&random=%5btimestamp%5d&rml=y&vpaidHtml5=Y",
 					"protocol": "https",
@@ -5062,9 +4998,6 @@
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"dd\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
-							"pm.test(\"USYNC Pixel lrjs\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(usync + \"lrjs\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
-							"});",
 							"",
 							"pm.test(\"USYNC Pixel db\", function() {",
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"db\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
@@ -5090,7 +5023,7 @@
 							"})",
 							"",
 							"pm.test(\"USYNC Count = 20\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(20);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(19);",
 							"});",
 							"////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"/////////////////////////////////////////////////////////////////////L0-SECURE.VIDEOHUB/////////////////////////////////////////////////////////",
@@ -5210,10 +5143,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "{{SERVER_NAME}}/preview?RI=i_9P9HQnFpv3XEtmaXl2wQ&screenType=desktop&rml=false&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=bottom-right&usedACP=y&dspACP=TREMORVIDEO_BEHAVIOR&sig=E9882C6525F95BFA599CB11BF7B98CB3&CI=fkme_rzqTp5y7f9N3hiK2w&dmps=y",
 					"host": [
@@ -5306,7 +5235,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e19d00c5-7132-4bdd-8426-ba776cd05d6e",
+						"id": "205bd259-f726-47fe-abda-4c3ddd62da8a",
 						"exec": [
 							"////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"////////////////////////////////////////////////////////////////////HECH STATUS 200/////////////////////////////////////////////////////////////////",
@@ -5452,10 +5381,6 @@
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"dd\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
-							"pm.test(\"USYNC Pixel lrjs\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(usync + \"lrjs\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"",
 							"pm.test(\"USYNC Pixel db\", function() {",
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"db\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
@@ -5480,7 +5405,7 @@
 							"})",
 							"",
 							"pm.test(\"USYNC Count = 20\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(20);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(19);",
 							"});",
 							"////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"/////////////////////////////////////////////////////////////////////L0-SECURE.VIDEOHUB/////////////////////////////////////////////////////////",
@@ -5597,12 +5522,8 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "{{SERVER_NAME}}/preview?RI=-_4K4O3w7CspJJWcfG3I5w&screenType=desktop&rml=false&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=bottom-right&usedACP=y&dspACP=TREMORVIDEO_BEHAVIOR&sig=5D956CC916D65D5BDF5794970C68E6EB&CI=wDAimgwijdeORdURJuoLLw&dmps=y",
+					"raw": "{{SERVER_NAME}}/preview?RI=0eD0x-MBUWxGi9L3SWt8Bw&screenType=desktop&rml=false&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=8C6DAF108BE9ECF2A928CD0CCAA461CC&CI=wDAimgwijdeORdURJuoLLw&filterScreenTypes=desktop,mobilephone,mobiletablet,ctv&advertiserName=QA_DO_NOT_ALTER&dmps=y&SUI=21906",
 					"host": [
 						"{{SERVER_NAME}}"
 					],
@@ -5612,7 +5533,7 @@
 					"query": [
 						{
 							"key": "RI",
-							"value": "-_4K4O3w7CspJJWcfG3I5w"
+							"value": "0eD0x-MBUWxGi9L3SWt8Bw"
 						},
 						{
 							"key": "screenType",
@@ -5660,27 +5581,39 @@
 						},
 						{
 							"key": "position_ACP",
-							"value": "bottom-right"
+							"value": "__adChoicesPosition__"
 						},
 						{
 							"key": "usedACP",
-							"value": "y"
+							"value": "__usedACP__"
 						},
 						{
 							"key": "dspACP",
-							"value": "TREMORVIDEO_BEHAVIOR"
+							"value": "__adChoicesProviders__"
 						},
 						{
 							"key": "sig",
-							"value": "5D956CC916D65D5BDF5794970C68E6EB"
+							"value": "8C6DAF108BE9ECF2A928CD0CCAA461CC"
 						},
 						{
 							"key": "CI",
 							"value": "wDAimgwijdeORdURJuoLLw"
 						},
 						{
+							"key": "filterScreenTypes",
+							"value": "desktop,mobilephone,mobiletablet,ctv"
+						},
+						{
+							"key": "advertiserName",
+							"value": "QA_DO_NOT_ALTER"
+						},
+						{
 							"key": "dmps",
 							"value": "y"
+						},
+						{
+							"key": "SUI",
+							"value": "21906"
 						}
 					]
 				}
@@ -5846,10 +5779,6 @@
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"dd\\\\?userId=\", \"g\")) || []).length).to.equal(1);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"USYNC Pixel lrjs\", function() {\r",
-							"    pm.expect((pm.response.text().match(new RegExp(usync + \"lrjs\\\\?userId=\", \"g\")) || []).length).to.equal(1);\r",
-							"});\r",
-							"\r",
 							"pm.test(\"USYNC Pixel db\", function() {\r",
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"db\\\\?userId=\", \"g\")) || []).length).to.equal(1);\r",
 							"});\r",
@@ -5878,7 +5807,7 @@
 							"})\r",
 							"\r",
 							"pm.test(\"USYNC Count = 21\", function() {\r",
-							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(21);\r",
+							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(20);\r",
 							"});\r",
 							"\r",
 							"////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\r",
@@ -5933,7 +5862,7 @@
 							"///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\r",
 							"\r",
 							"pm.test(\"NielsenOCR\", function() {\r",
-							"    pm.expect((pm.response.text().match(new RegExp(\"secure-gl.imrworldwide.com/cgi-bin/\", \"g\")) || []).length).to.equal(1);\r",
+							"    pm.expect((pm.response.text().match(new RegExp(\"s.tremorvideodsp.com/q/nielsenOCRTestPixel.gif\", \"g\")) || []).length).to.equal(1);\r",
 							"});\r",
 							"\r",
 							"\r",
@@ -5951,7 +5880,7 @@
 							"\r",
 							"\r",
 							"pm.test(\"VASTAdTagURI\", function() {\r",
-							"    pm.expect((pm.response.text().match(new RegExp(\"https://s.tremorvideodsp.com/q/tp_mp4.xml\")) || []).length).to.equal(1);\r",
+							"    pm.expect((pm.response.text().match(new RegExp(\"https://s.tremorvideodsp.com/q/tp_mp4_over.xml\")) || []).length).to.equal(1);\r",
 							"});\r",
 							"pm.test(\"tvdsp\", function() {\r",
 							"    pm.expect((pm.response.text().match(new RegExp(\"https://tremorvideodsp.com/tech.html\")) || []).length).to.equal(1);\r",
@@ -5987,12 +5916,8 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "https://adserver.videohub.tv/preview?RI=-_4K4O3w7CspJJWcfG3I5w&screenType=ctv&rml=false&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=A155FCA224910EB255D27BD0E4352508&CI=QkVpBSG0y-r_S_mC1CaF6Q&dmps=y&ssDsC=ctv",
+					"raw": "https://adserver.videohub.tv/preview?RI=0eD0x-MBUWxGi9L3SWt8Bw&screenType=desktop&rml=false&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=8C6DAF108BE9ECF2A928CD0CCAA461CC&CI=wDAimgwijdeORdURJuoLLw&filterScreenTypes=desktop,mobilephone,mobiletablet,ctv&advertiserName=QA_DO_NOT_ALTER&dmps=y&SUI=21906&ssDsC=ctv",
 					"protocol": "https",
 					"host": [
 						"adserver",
@@ -6005,11 +5930,11 @@
 					"query": [
 						{
 							"key": "RI",
-							"value": "-_4K4O3w7CspJJWcfG3I5w"
+							"value": "0eD0x-MBUWxGi9L3SWt8Bw"
 						},
 						{
 							"key": "screenType",
-							"value": "ctv"
+							"value": "desktop"
 						},
 						{
 							"key": "rml",
@@ -6065,15 +5990,27 @@
 						},
 						{
 							"key": "sig",
-							"value": "A155FCA224910EB255D27BD0E4352508"
+							"value": "8C6DAF108BE9ECF2A928CD0CCAA461CC"
 						},
 						{
 							"key": "CI",
-							"value": "QkVpBSG0y-r_S_mC1CaF6Q"
+							"value": "wDAimgwijdeORdURJuoLLw"
+						},
+						{
+							"key": "filterScreenTypes",
+							"value": "desktop,mobilephone,mobiletablet,ctv"
+						},
+						{
+							"key": "advertiserName",
+							"value": "QA_DO_NOT_ALTER"
 						},
 						{
 							"key": "dmps",
 							"value": "y"
+						},
+						{
+							"key": "SUI",
+							"value": "21906"
 						},
 						{
 							"key": "ssDsC",
@@ -6229,10 +6166,6 @@
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"dd\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
 							"",
-							"pm.test(\"USYNC Pixel lrjs\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(usync + \"lrjs\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
-							"});",
-							"",
 							"pm.test(\"USYNC Pixel db\", function() {",
 							"    pm.expect((pm.response.text().match(new RegExp(usync + \"db\\\\?userId=\", \"g\")) || []).length).to.equal(1);",
 							"});",
@@ -6257,7 +6190,7 @@
 							"})",
 							"",
 							"pm.test(\"USYNC Count = 20\", function() {",
-							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(20);",
+							"    pm.expect((pm.response.text().match(new RegExp(\"usync\", \"g\")) || []).length).to.equal(19);",
 							"});",
 							"////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
 							"/////////////////////////////////////////////////////////////////////L0-SECURE.VIDEOHUB/////////////////////////////////////////////////////////",
@@ -6496,10 +6429,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "{{SERVER_NAME}}/preview?RI=NrKrDCYCiKsZlfsu0NDVcA&screenType=desktop&rml=true&Uctry=__country__&Ust=__state__&Udma=__dma__&Uzip=__postalCode__&Ucty=__city__&Uctnt=__continent__&Ulong=__longitude__&Ulat=__latitude__&Uacd=__areaCode__&position_ACP=__adChoicesPosition__&usedACP=__usedACP__&dspACP=__adChoicesProviders__&sig=8962A0CAAC3EFBE9D2E1EA50E997264B&CI=0beBouuSpRHsP1sP61Qgpg&dmps=y&SUI=21906",
 					"host": [
